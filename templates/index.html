@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semicho Supermarket Prototype</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Software Architecture Prototype</p>
+                <h1>Semicho Online Supermarket</h1>
+                <p class="hero-copy">
+                    A lightweight full-stack demo showing product discovery, order placement,
+                    and inventory administration through a shared backend and database.
+                </p>
+            </div>
+            <div class="hero-panel">
+                <div class="metric-card">
+                    <span>Total Products</span>
+                    <strong id="metric-products">0</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Orders Today</span>
+                    <strong id="metric-orders">0</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Low Stock Alerts</span>
+                    <strong id="metric-stock">0</strong>
+                </div>
+                <div class="metric-card">
+                    <span>Revenue</span>
+                    <strong id="metric-revenue">$0.00</strong>
+                </div>
+            </div>
+        </header>
+
+        <main class="layout">
+            <section class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Module 1</p>
+                        <h2>Product Catalog</h2>
+                    </div>
+                    <button id="refresh-products" class="ghost-button">Refresh Catalog</button>
+                </div>
+                <div id="product-list" class="product-grid"></div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Module 2</p>
+                        <h2>Order Management</h2>
+                    </div>
+                </div>
+                <form id="order-form" class="order-form">
+                    <label>
+                        Customer name
+                        <input id="customer-name" type="text" placeholder="Enter customer name" required>
+                    </label>
+                    <div id="cart-items" class="cart-list"></div>
+                    <div class="cart-footer">
+                        <span>Order total</span>
+                        <strong id="cart-total">$0.00</strong>
+                    </div>
+                    <button type="submit" class="primary-button">Place Order</button>
+                </form>
+                <div id="order-feedback" class="feedback"></div>
+
+                <div class="history">
+                    <h3>Recent Orders</h3>
+                    <div id="orders-list" class="history-list"></div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Module 3</p>
+                        <h2>Inventory Administration</h2>
+                    </div>
+                </div>
+                <form id="restock-form" class="restock-form">
+                    <label>
+                        Product
+                        <select id="restock-product"></select>
+                    </label>
+                    <label>
+                        Quantity
+                        <input id="restock-quantity" type="number" min="1" value="5" required>
+                    </label>
+                    <button type="submit" class="primary-button">Restock Product</button>
+                </form>
+                <div id="restock-feedback" class="feedback"></div>
+                <div id="stock-table" class="stock-table"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

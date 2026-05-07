@@ -1,0 +1,248 @@
+:root {
+    --bg: #f3efe6;
+    --surface: #fffaf2;
+    --surface-strong: #f8eed7;
+    --ink: #1f2a2e;
+    --muted: #617277;
+    --accent: #0f766e;
+    --accent-dark: #134e4a;
+    --warm: #d97706;
+    --border: #d8ccb8;
+    --shadow: 0 18px 45px rgba(34, 48, 53, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top right, rgba(217, 119, 6, 0.12), transparent 28%),
+        linear-gradient(180deg, #efe3cf 0%, var(--bg) 32%, #f8f4ec 100%);
+}
+
+.page-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 24px auto 40px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    padding: 28px;
+    border: 1px solid rgba(31, 42, 46, 0.08);
+    border-radius: 24px;
+    background: rgba(255, 250, 242, 0.88);
+    box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.section-kicker {
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    color: var(--warm);
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1;
+}
+
+.hero-copy {
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.hero-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.metric-card,
+.panel,
+.product-card {
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.metric-card {
+    padding: 18px;
+    background: linear-gradient(180deg, #fffaf2, var(--surface-strong));
+}
+
+.metric-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.metric-card strong {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.8rem;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 24px;
+}
+
+.panel {
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.product-grid,
+.history-list,
+.stock-table,
+.cart-list {
+    display: grid;
+    gap: 14px;
+}
+
+.product-card {
+    padding: 16px;
+    background: #fffdf8;
+}
+
+.product-card p {
+    margin: 8px 0;
+    color: var(--muted);
+}
+
+.price-row,
+.cart-row,
+.stock-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+}
+
+.product-actions,
+.cart-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+input,
+select {
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fffdfa;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 16px;
+    transition: transform 140ms ease, opacity 140ms ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+.primary-button {
+    background: var(--accent);
+    color: white;
+}
+
+.ghost-button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--accent-dark);
+}
+
+.qty-input {
+    width: 78px;
+    margin: 0;
+}
+
+.cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    margin: 12px 0 16px;
+}
+
+.feedback {
+    min-height: 24px;
+    margin-top: 14px;
+    color: var(--accent-dark);
+}
+
+.history {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.history-item,
+.stock-row,
+.cart-row {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #f7f1e5;
+}
+
+.stock-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #efe3cf;
+    color: var(--accent-dark);
+    font-size: 0.86rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 960px) {
+    .hero,
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}
