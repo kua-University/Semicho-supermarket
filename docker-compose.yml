@@ -1,0 +1,12 @@
+version: '3.8' 
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    volumes:
+      - semicho-data:/app/data
+    restart: always
+
+volumes:
+  semicho-data:
